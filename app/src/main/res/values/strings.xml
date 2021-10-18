@@ -5,5 +5,8 @@
     <string name="home_fragment">Home Fragment</string>
     <string name="logo">logo</string>
     <string name="background_image_desc">background image</string>
-    <string name="phone_user_phone">Phone:\@{user.phone}</string>
+    <string name="image_button_desc">back_arrow</string>
+    <string name="loading">Loading…</string>
+    <string name="albums">Albums</string>
+    <string name="posts">Posts</string>
 </resources>

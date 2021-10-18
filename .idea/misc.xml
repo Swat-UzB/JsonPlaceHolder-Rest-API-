@@ -8,14 +8,29 @@
         <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/drawable/all_corners_style.xml" value="0.32839632277834524" />
         <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/drawable/border_of_image.xml" value="0.32839632277834524" />
         <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/drawable/bottom_corners.xml" value="0.25" />
+        <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/drawable/card_view_bacground.xml" value="0.3390625" />
+        <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/drawable/card_view_background.xml" value="0.33489583333333334" />
         <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/drawable/ic_albums.xml" value="0.33489583333333334" />
         <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/drawable/ic_comments.xml" value="0.33489583333333334" />
+        <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/drawable/ic_company.xml" value="0.3390625" />
         <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/drawable/ic_launcher_background.xml" value="0.33489583333333334" />
+        <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/drawable/ic_location.xml" value="0.3390625" />
+        <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/drawable/ic_phone.xml" value="0.3390625" />
+        <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/drawable/ic_post.xml" value="0.33489583333333334" />
+        <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/drawable/ic_todos.xml" value="0.3390625" />
+        <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/drawable/ic_user.xml" value="0.3390625" />
+        <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/drawable/ic_users.xml" value="0.3390625" />
+        <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/drawable/ic_web.xml" value="0.3390625" />
         <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/drawable/splash_screen.xml" value="0.32839632277834524" />
         <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/layout/activity_main.xml" value="0.3145833333333333" />
+        <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/layout/album_item.xml" value="0.26902173913043476" />
+        <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/layout/costum_dialog.xml" value="0.3145833333333333" />
+        <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/layout/fragment_albums.xml" value="0.22" />
         <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/layout/fragment_home.xml" value="0.3145833333333333" />
-        <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/layout/fragment_profile.xml" value="0.3145833333333333" />
+        <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/layout/fragment_posts.xml" value="0.1" />
+        <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/layout/fragment_profile.xml" value="0.18" />
         <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/layout/fragment_splash_screen.xml" value="0.29739583333333336" />
+        <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/layout/post_item.xml" value="0.26902173913043476" />
         <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/layout/user_item.xml" value="0.25" />
       </map>
     </option>

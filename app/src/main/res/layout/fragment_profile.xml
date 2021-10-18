@@ -10,99 +10,169 @@
             type="com.example.jsonplaceholderrestapi.data.models.User" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/frameLayout2"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#1F96FE"
-        tools:context=".fragments.profile.ProfileFragment">
+        android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/all_corners_style"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent=".75"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/full_name_text_view"
-            style="@style/TextAppearance.AppCompat.Headline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="@dimen/margin_horizontal"
-            android:text="@{user.name}"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/avatar_image_view"
-            tools:text="nickName" />
-
-        <TextView
-            android:id="@+id/mail_text_view"
-            style="@style/TextAppearance.AppCompat.Large"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="@dimen/margin_horizontal"
-            android:text="@{user.email}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/full_name_text_view"
-            tools:text="Mail" />
-
-        <View
-            android:id="@+id/border"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/frameLayout2"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="@dimen/margin_horizontal"
-            android:background="@android:color/darker_gray"
-            app:layout_constraintTop_toBottomOf="@id/mail_text_view" />
-
-        <TextView
-            android:id="@+id/user_name_text_view"
-            style="@style/TextAppearance.AppCompat.Subhead"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="@dimen/margin_horizontal"
-            android:text="@{user.username}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/border"
-            tools:text="Nick Name" />
+            android:background="#1F96FE"
+            tools:context=".fragments.profile.ProfileFragment">
 
-        <TextView
-            android:id="@+id/phone_number_text_view"
-            style="@style/TextAppearance.AppCompat.Subhead"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="@dimen/margin_horizontal"
-            android:text="@string/phone_user_phone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/user_name_text_view"
-            tools:text="Nick Name" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.1" />
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/avatar_image_view"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_margin="8dp"
-            android:elevation="4dp"
-            android:setImageProfile="@{user.id}"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-            app:layout_constraintCircleRadius="50dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/linearLayout"
-            app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
-            app:srcCompat="@drawable/android"
-            app:strokeWidth="2dp" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.9" />
+
+
+            <View
+                android:id="@+id/linearLayout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/all_corners_style"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent=".85"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/full_name_text_view"
+                style="@style/TextAppearance.AppCompat.Headline"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_horizontal"
+                android:gravity="center"
+                android:text="@{user.name}"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/avatar_image_view"
+                tools:text="Name" />
+
+            <TextView
+                android:id="@+id/mail_text_view"
+                style="@style/TextAppearance.AppCompat.Large"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_horizontal"
+                android:autoLink="email"
+                android:gravity="center"
+                android:text="@{user.email}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/full_name_text_view"
+                tools:text="Mail" />
+
+            <View
+                android:id="@+id/border"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/margin_horizontal"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintTop_toBottomOf="@id/mail_text_view" />
+
+            <TextView
+                android:id="@+id/user_name_text_view"
+                style="@style/Custom.Style"
+                android:text="@{user.username}"
+                app:drawableStartCompat="@drawable/ic_user"
+                app:layout_constraintEnd_toEndOf="@id/guideline2"
+                app:layout_constraintStart_toStartOf="@id/guideline1"
+                app:layout_constraintTop_toBottomOf="@+id/border"
+                tools:text="user Name" />
+
+            <TextView
+                android:id="@+id/phone_number_text_view"
+                style="@style/Custom.Style"
+                android:autoLink="phone"
+                android:text='@{user.phone}'
+                app:drawableStartCompat="@drawable/ic_phone"
+                app:layout_constraintEnd_toEndOf="@id/guideline2"
+                app:layout_constraintStart_toStartOf="@id/guideline1"
+                app:layout_constraintTop_toBottomOf="@+id/user_name_text_view"
+                tools:text="Phone" />
+
+            <TextView
+                android:id="@+id/website_text_view"
+                style="@style/Custom.Style"
+                android:autoLink="web"
+                android:text='@{user.website}'
+                app:drawableEndCompat="@drawable/ic_forward"
+                app:drawableStartCompat="@drawable/ic_web"
+                app:layout_constraintEnd_toEndOf="@id/guideline2"
+                app:layout_constraintStart_toStartOf="@id/guideline1"
+                app:layout_constraintTop_toBottomOf="@+id/phone_number_text_view"
+                tools:text="Website" />
+
+            <TextView
+                android:id="@+id/company_text_view"
+                style="@style/Custom.Style"
+                android:text='@{user.company.name}'
+                app:drawableStartCompat="@drawable/ic_company"
+                app:layout_constraintEnd_toEndOf="@id/guideline2"
+                app:layout_constraintStart_toStartOf="@id/guideline1"
+                app:layout_constraintTop_toBottomOf="@+id/website_text_view"
+                tools:text="company" />
+
+            <TextView
+                android:id="@+id/address_text_view"
+                style="@style/Custom.Style"
+                android:openGeo='@{"geo:"+user.address.geo.lat +","+user.address.geo.lng+","}'
+                android:text='@{user.address.city+", "+user.address.street+", "+ user.address.suite}'
+                app:drawableEndCompat="@drawable/ic_forward"
+                app:drawableStartCompat="@drawable/ic_location"
+                app:layout_constraintEnd_toEndOf="@id/guideline2"
+                app:layout_constraintStart_toStartOf="@id/guideline1"
+                app:layout_constraintTop_toBottomOf="@+id/company_text_view"
+                tools:text="Address" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/avatar_image_view"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_margin="8dp"
+                android:elevation="4dp"
+                android:setImageProfile="@{user.id}"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+                app:layout_constraintCircleRadius="50dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/linearLayout"
+                app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
+                app:srcCompat="@drawable/android"
+                app:strokeWidth="2dp" />
+
+            <TextView
+                android:id="@+id/posts_text_view"
+                style="@style/Custom.Style"
+                android:text="@string/posts"
+                app:drawableEndCompat="@drawable/ic_forward"
+                app:layout_constraintEnd_toEndOf="@id/guideline2"
+                app:layout_constraintStart_toStartOf="@id/guideline1"
+                app:layout_constraintTop_toBottomOf="@+id/address_text_view"
+                app:drawableStartCompat="@drawable/ic_post" />
+
+            <TextView
+                android:id="@+id/albums_text_view"
+                style="@style/Custom.Style"
+                android:text="@string/albums"
+                app:drawableEndCompat="@drawable/ic_forward"
+                app:drawableStartCompat="@drawable/ic_albums"
+                app:layout_constraintEnd_toEndOf="@id/guideline2"
+                app:layout_constraintStart_toStartOf="@id/guideline1"
+                app:layout_constraintTop_toBottomOf="@+id/posts_text_view" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>
