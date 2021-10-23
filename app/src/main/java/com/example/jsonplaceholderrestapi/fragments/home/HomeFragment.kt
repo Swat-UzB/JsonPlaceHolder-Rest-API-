@@ -31,10 +31,12 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         loading = LoadingDialog(this)
         loading.startLoadingDialog()
-        requireActivity().window.statusBarColor
         activity?.window?.statusBarColor = Color.WHITE
+        binding.userRecyclerView.apply {
+            adapter = userAdapter
+            layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
+        }
         val repository = Repository()
-
         val viewModelFactory = MainViewModelFactory(repository)
         viewModel = ViewModelProvider(this, viewModelFactory).get(
             MainViewModel::
@@ -43,7 +45,7 @@ class HomeFragment : Fragment() {
         viewModel.getAllUsers()
         viewModel.allUsers.observe(requireActivity(), Observer
         { response ->
-            if (response.isSuccessful) with(response.body()) {
+            if (response.isSuccessful) {
                 userAdapter.setData(response.body())
                 Log.d(TAG, response.body()?.size.toString())
                 loading.dismissDialog()
@@ -52,15 +54,8 @@ class HomeFragment : Fragment() {
             }
 
         })
-        binding.userRecyclerView.apply {
-            adapter = userAdapter
-            layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
-
-        }
-
         return binding.root
     }
-
 
 
     companion object {

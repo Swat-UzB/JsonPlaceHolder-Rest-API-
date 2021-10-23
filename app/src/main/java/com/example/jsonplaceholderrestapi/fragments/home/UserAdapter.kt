@@ -3,7 +3,6 @@ package com.example.jsonplaceholderrestapi.fragments.home
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.jsonplaceholderrestapi.data.models.User
 import com.example.jsonplaceholderrestapi.databinding.UserItemBinding
@@ -34,13 +33,7 @@ class UserAdapter() : RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
         RecyclerView.ViewHolder(binding.root) {
 
         fun bindData(user: User) {
-            with(binding) {
-                this.user = user
-                constraintLayout.setOnClickListener {
-                    val action = HomeFragmentDirections.actionHomeFragment2ToProfileFragment(user)
-                    it.findNavController().navigate(action)
-                }
-            }
+            binding.user = user
             binding.executePendingBindings()
         }
     }

@@ -5,8 +5,15 @@ import android.net.Uri
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.BindingAdapter
+import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
+import com.example.jsonplaceholderrestapi.data.models.User
+import com.example.jsonplaceholderrestapi.fragments.albums.AlbumsFragmentDirections
+import com.example.jsonplaceholderrestapi.fragments.home.HomeFragmentDirections
+import com.example.jsonplaceholderrestapi.fragments.profile.ProfileFragmentDirections
 import com.google.android.material.imageview.ShapeableImageView
 import java.util.*
 
@@ -23,16 +30,6 @@ class BindingAdapters {
             }
         }
 
-        @BindingAdapter("android:openWebsite")
-        @JvmStatic
-        fun openWebsite(view: View, uri: String) {
-            view.setOnClickListener {
-                Log.d("rrrr", uri)
-                val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(uri))
-                view.context.startActivity(browserIntent)
-            }
-        }
-
         @BindingAdapter("android:openGeo")
         @JvmStatic
         fun openGeo(view: View, geo: String) {
@@ -45,22 +42,60 @@ class BindingAdapters {
             }
         }
 
-        @BindingAdapter("android:sendMail")
+        @BindingAdapter(
+            value = ["albumId", "type"]
+        )
         @JvmStatic
-        fun sendMail(view: View, mailAddress: String) {
-            val mailIntent = Intent(Intent.ACTION_SEND).apply {
-                putExtra(Intent.EXTRA_EMAIL, mailAddress)
+        fun downloadImage(view: View, albumId: Int, type: Int) {
+            val uri1 = when (type) {
+                0 -> "https://picsum.photos/id/${1 + (albumId - 1) * 10}/150/150"
+                1 -> {
+                    "https://picsum.photos/id/${albumId % 1000}/300/600"
+                }
+                else -> ""
             }
-            view.context.startActivity(mailIntent)
+            Glide.with(view.context)
+                .load(Uri.parse(uri1))
+                .placeholder(R.drawable.placeholder)
+                .into(view as ImageView)
         }
 
-        @BindingAdapter("android:downloadImage")
+        @BindingAdapter("android:sendDataToProfileFragment")
         @JvmStatic
-        fun downloadImage(view: View, uri: String) {
-            Glide.with(view.context)
-                .load(Uri.parse(uri))
-                .into(view as ImageView)
+        fun sendDataToProfileFragment(view: ConstraintLayout, user: User) {
+            view.setOnClickListener {
+                val action = HomeFragmentDirections.actionHomeFragment2ToProfileFragment(user)
+                view.findNavController().navigate(action)
+            }
+        }
 
+        @BindingAdapter("android:sendDataToAnotherFragment")
+        @JvmStatic
+        fun sendDataToPostsFragment(view: TextView, userId: Int) {
+            val action =
+                when (view.id) {
+                    R.id.albums_text_view -> ProfileFragmentDirections.actionProfileFragmentToAlbumsFragment(
+                        userId
+                    )
+                    R.id.posts_text_view -> ProfileFragmentDirections.actionProfileFragmentToPostsFragment(
+                        userId
+                    )
+                    else -> ProfileFragmentDirections.actionProfileFragmentToAlbumsFragment(
+                        userId)
+                }
+            view.setOnClickListener {
+                    view.findNavController().navigate(action)
+            }
+        }
+
+        @BindingAdapter("android:sendDataToPhotosFragment")
+        @JvmStatic
+        fun sendDataToPhotosFragment(view: ConstraintLayout, albumId: Int) {
+            view.setOnClickListener {
+                val action =
+                    AlbumsFragmentDirections.actionAlbumsFragmentToPhotosFragment(albumId)
+                view.findNavController().navigate(action)
+            }
         }
     }
 }

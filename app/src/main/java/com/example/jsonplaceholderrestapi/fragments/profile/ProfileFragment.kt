@@ -6,9 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
-import com.example.jsonplaceholderrestapi.R
 import com.example.jsonplaceholderrestapi.databinding.FragmentProfileBinding
 
 
@@ -23,19 +21,7 @@ class ProfileFragment : Fragment() {
         // Inflate the layout for this fragment
         activity?.window?.statusBarColor = Color.parseColor("#1F96FE")
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
-        with(binding) {
-//            viewPager2.adapter = TabPagerAdapter(this@ProfileFragment)
-//            TabLayoutMediator(tabLayout, viewPager2) { tab, position ->
-//                tab.text = when (position) {
-//                    0 -> getString(R.string.albums)
-//                    1 -> getString(R.string.posts)
-//                    else -> getString(R.string.albums)
-//                }
-//            }.attach()
-            this.user = args.user
-            postsTextView.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_profileFragment_to_postsFragment))
-            albumsTextView.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_profileFragment_to_albumsFragment))
-        }
+        binding.user = args.user
         return binding.root
     }
 

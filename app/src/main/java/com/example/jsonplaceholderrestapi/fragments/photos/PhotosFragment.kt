@@ -1,4 +1,4 @@
-package com.example.jsonplaceholderrestapi.fragments.posts
+package com.example.jsonplaceholderrestapi.fragments.photos
 
 import android.graphics.Color
 import android.os.Bundle
@@ -14,37 +14,38 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.jsonplaceholderrestapi.MainViewModelFactory
 import com.example.jsonplaceholderrestapi.data.repository.Repository
 import com.example.jsonplaceholderrestapi.data.viewmodel.MainViewModel
-import com.example.jsonplaceholderrestapi.databinding.FragmentPostsBinding
+import com.example.jsonplaceholderrestapi.databinding.FragmentPhotosBinding
 
-class PostsFragment : Fragment() {
+
+class PhotosFragment : Fragment() {
+    private val photosAdapter: PhotosAdapter by lazy { PhotosAdapter() }
+    private val args: PhotosFragmentArgs by navArgs()
+    private var _binding: FragmentPhotosBinding? = null
     private lateinit var viewModel: MainViewModel
-    private val postAdapter: PostAdapter by lazy { PostAdapter() }
-    private var _binding: FragmentPostsBinding? = null
-    private val args: PostsFragmentArgs by navArgs()
     private val binding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentPostsBinding.inflate(inflater, container, false)
+        _binding = FragmentPhotosBinding.inflate(inflater, container, false)
         activity?.window?.statusBarColor = Color.WHITE
-        val userId = args.userId
-        binding.postsRecyclerView.apply {
-            adapter = postAdapter
-            layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
+        binding.photoRecyclerView.apply {
+            adapter = photosAdapter
+            layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL)
         }
+        val albumId = args.albumId
         val repository = Repository()
         val viewModelFactory = MainViewModelFactory(repository)
         viewModel = ViewModelProvider(this, viewModelFactory)[MainViewModel::class.java]
-        viewModel.getPostsByUserId(userId)
-        viewModel.postsByUserId.observe(requireActivity(), Observer { response ->
+        viewModel.getPhotosByUserId(albumId)
+        viewModel.photosByUserId.observe(requireActivity(), Observer { response ->
             if (response.isSuccessful) {
-                postAdapter.setData(response.body())
+                photosAdapter.setData(response.body())
             } else {
                 Toast.makeText(
                     requireContext(),
-                    "getPostsByUserId: ${response.errorBody()}",
+                    "getPhotosByUserId: ${response.errorBody()}",
                     Toast.LENGTH_SHORT
                 ).show()
             }
