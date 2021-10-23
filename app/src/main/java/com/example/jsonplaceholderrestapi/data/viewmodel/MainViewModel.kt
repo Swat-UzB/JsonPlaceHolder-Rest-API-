@@ -3,12 +3,11 @@ package com.example.jsonplaceholderrestapi.data.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.jsonplaceholderrestapi.data.models.Album
-import com.example.jsonplaceholderrestapi.data.models.Photo
-import com.example.jsonplaceholderrestapi.data.models.Post
-import com.example.jsonplaceholderrestapi.data.models.User
+import com.example.jsonplaceholderrestapi.data.models.*
 import com.example.jsonplaceholderrestapi.data.repository.Repository
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import retrofit2.Response
 
 class MainViewModel(private val repository: Repository) : ViewModel() {
@@ -18,45 +17,67 @@ class MainViewModel(private val repository: Repository) : ViewModel() {
     val photosByUserId: MutableLiveData<Response<List<Photo>>> = MutableLiveData()
     val allUsers: MutableLiveData<Response<List<User>>> = MutableLiveData()
     val albumsByUserId: MutableLiveData<Response<List<Album>>> = MutableLiveData()
+    val commentsByPostId: MutableLiveData<Response<List<Comment>>> = MutableLiveData()
     fun getAllPosts() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             val response = repository.getAllPosts()
-            myResponseAllPosts.value = response
+            withContext(Dispatchers.Main) {
+                myResponseAllPosts.value = response
+            }
         }
     }
 
     fun getPostsByUserId(userId: Int) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             val response = repository.getPostsByUserId(userId)
-            postsByUserId.value = response
+            withContext(Dispatchers.Main) {
+                postsByUserId.value = response
+            }
         }
     }
 
     fun getPostById(postId: Int) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             val response = repository.getPostById(postId)
-            postById.value = response
+            withContext(Dispatchers.Main) {
+                postById.value = response
+            }
         }
     }
 
     fun getAllUsers() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             val response = repository.getAllUsers()
-            allUsers.value = response
+            withContext(Dispatchers.Main) {
+                allUsers.value = response
+            }
         }
     }
 
     fun getAlbumsByUserId(userId: Int) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             val response = repository.getAlbumsByUserId(userId)
-            albumsByUserId.value = response
+            withContext(Dispatchers.Main) {
+                albumsByUserId.value = response
+            }
         }
     }
 
     fun getPhotosByUserId(albumId: Int) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             val response = repository.getPhotosByAlbumId(albumId)
-            photosByUserId.value = response
+            withContext(Dispatchers.Main) {
+                photosByUserId.value = response
+            }
+        }
+    }
+
+    fun getCommentsByPostId(postId: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            val response = repository.getCommentsByPostId(postId)
+            withContext(Dispatchers.Main) {
+                commentsByPostId.value = response
+            }
         }
     }
 }

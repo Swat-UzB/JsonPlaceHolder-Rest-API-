@@ -1,15 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/comments_item_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.CommentsFragment">
-
+    tools:context=".fragments.comment.CommentsFragment">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/title"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_margin="20dp"
+        android:gravity="start"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:drawableEndCompat="@drawable/ic_close"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Comment    (10)" />
 
-</FrameLayout>
+    <View
+        android:id="@+id/border"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/comment_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/add_commit"
+        app:layout_constraintTop_toBottomOf="@id/border"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="-16dp" />
+
+    <LinearLayout
+        android:id="@+id/add_commit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_weight="8.5"
+            android:background="@null"
+            android:hint="@string/type_a_comment"
+            android:importantForAutofill="no"
+            android:inputType="text" />
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:background="@color/teal_200"
+            android:contentDescription="@string/send_icon"
+            android:src="@drawable/ic_send" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

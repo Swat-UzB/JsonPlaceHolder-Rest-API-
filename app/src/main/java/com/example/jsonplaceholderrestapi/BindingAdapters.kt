@@ -13,12 +13,16 @@ import com.bumptech.glide.Glide
 import com.example.jsonplaceholderrestapi.data.models.User
 import com.example.jsonplaceholderrestapi.fragments.albums.AlbumsFragmentDirections
 import com.example.jsonplaceholderrestapi.fragments.home.HomeFragmentDirections
+import com.example.jsonplaceholderrestapi.fragments.posts.PostsFragmentDirections
 import com.example.jsonplaceholderrestapi.fragments.profile.ProfileFragmentDirections
 import com.google.android.material.imageview.ShapeableImageView
 import java.util.*
 
 class BindingAdapters {
+
+
     companion object {
+
         @BindingAdapter("android:setImageProfile")
         @JvmStatic
         fun setImageProfile(view: ShapeableImageView, userId: Int) {
@@ -80,11 +84,15 @@ class BindingAdapters {
                     R.id.posts_text_view -> ProfileFragmentDirections.actionProfileFragmentToPostsFragment(
                         userId
                     )
+                    R.id.comment_text_view -> PostsFragmentDirections.actionPostsFragmentToCommentsFragment(
+                        userId
+                    )
                     else -> ProfileFragmentDirections.actionProfileFragmentToAlbumsFragment(
-                        userId)
+                        userId
+                    )
                 }
             view.setOnClickListener {
-                    view.findNavController().navigate(action)
+                view.findNavController().navigate(action)
             }
         }
 
@@ -97,7 +105,31 @@ class BindingAdapters {
                 view.findNavController().navigate(action)
             }
         }
+
+        @BindingAdapter("android:likeAction")
+        @JvmStatic
+        fun likeAction(view: TextView, liked: Boolean) {
+
+            view.setOnClickListener {
+                if (!view.text.equals("like")) {
+                    view.text = "like"
+                    view.setCompoundDrawablesWithIntrinsicBounds(
+                        R.drawable.ic_like,
+                        0,
+                        0,
+                        0
+                    )
+                } else {
+                    view.text = "liked"
+                    view.setCompoundDrawablesWithIntrinsicBounds(
+                        R.drawable.ic_liked,
+                        0,
+                        0,
+                        0
+                    )
+                }
+            }
+        }
     }
 }
-
 

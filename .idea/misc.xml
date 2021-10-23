@@ -11,9 +11,11 @@
         <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/drawable/card_view_bacground.xml" value="0.3390625" />
         <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/drawable/card_view_background.xml" value="0.33489583333333334" />
         <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/drawable/ic_albums.xml" value="0.33489583333333334" />
+        <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/drawable/ic_close.xml" value="0.32839632277834524" />
         <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/drawable/ic_comment.xml" value="0.33489583333333334" />
         <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/drawable/ic_comments.xml" value="0.33489583333333334" />
         <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/drawable/ic_company.xml" value="0.3390625" />
+        <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/drawable/ic_favorite.xml" value="0.32839632277834524" />
         <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/drawable/ic_launcher_background.xml" value="0.33489583333333334" />
         <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/drawable/ic_like.xml" value="0.33489583333333334" />
         <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/drawable/ic_liked.xml" value="0.33489583333333334" />
@@ -29,9 +31,10 @@
         <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/drawable/splash_screen.xml" value="0.32839632277834524" />
         <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/layout/activity_main.xml" value="0.3145833333333333" />
         <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/layout/album_item.xml" value="0.22" />
+        <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/layout/comment_item.xml" value="0.5" />
         <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/layout/costum_dialog.xml" value="0.3145833333333333" />
         <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/layout/fragment_albums.xml" value="0.22" />
-        <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/layout/fragment_comments.xml" value="0.3145833333333333" />
+        <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/layout/fragment_comments.xml" value="0.33" />
         <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/layout/fragment_home.xml" value="0.3145833333333333" />
         <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/layout/fragment_photos.xml" value="0.3145833333333333" />
         <entry key="..\:/Users/SwaT_UzB/AndroidStudioProjects/JsonPlaceHolderRestApi/app/src/main/res/layout/fragment_posts.xml" value="0.1" />

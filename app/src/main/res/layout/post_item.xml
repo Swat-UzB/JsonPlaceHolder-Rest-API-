@@ -13,10 +13,10 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="2dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
         app:cardCornerRadius="40dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -77,6 +77,7 @@
                     android:clickable="true"
                     android:drawablePadding="16dp"
                     android:focusable="true"
+                    android:likeAction="@{true}"
                     android:text="@string/like_str"
                     app:drawableStartCompat="@drawable/ic_like" />
 
@@ -88,7 +89,8 @@
                     android:clickable="true"
                     android:drawablePadding="16dp"
                     android:focusable="true"
-                    android:text="@string/comment_str"
+                    android:sendDataToAnotherFragment="@{post.id}"
+                    android:text="@string/comments"
                     app:drawableStartCompat="@drawable/ic_comment" />
 
                 <TextView

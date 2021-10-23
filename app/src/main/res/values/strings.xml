@@ -10,8 +10,13 @@
     <string name="albums">Albums</string>
     <string name="posts">Posts</string>
     <string name="album_image_desc">album_image</string>
-    <string name="like_str">Like</string>
-    <string name="comment_str">comment</string>
+    <string name="like_str">like</string>
+    <string name="comment_str">Comments (%s) </string>
     <string name="share_str">share</string>
     <string name="image_desc">image desc</string>
+    <string name="type_a_comment">Type a comment...</string>
+    <string name="send_icon">send icon</string>
+    <string name="comments">comments</string>
+    <string name="_312">312 -\u</string>
+    <string name="reply"> Reply</string>
 </resources>

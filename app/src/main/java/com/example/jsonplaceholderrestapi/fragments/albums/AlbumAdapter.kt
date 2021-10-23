@@ -38,6 +38,7 @@ class AlbumAdapter : RecyclerView.Adapter<AlbumAdapter.AlbumViewHolder>() {
         RecyclerView.ViewHolder(binding.root) {
         fun bindData(album: Album) {
             binding.album = album
+            binding.executePendingBindings()
         }
     }
 

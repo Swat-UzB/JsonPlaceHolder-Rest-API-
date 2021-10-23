@@ -35,6 +35,7 @@ class PostAdapter : RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
         RecyclerView.ViewHolder(binding.root) {
         fun bindData(post: Post) {
             binding.post = post
+            binding.executePendingBindings()
         }
     }
 }

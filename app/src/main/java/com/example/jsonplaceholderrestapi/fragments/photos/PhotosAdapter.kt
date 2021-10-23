@@ -35,6 +35,7 @@ class PhotosAdapter : RecyclerView.Adapter<PhotosAdapter.PhotosViewHolder>() {
         RecyclerView.ViewHolder(binding.root) {
         fun bindData(photo: Photo) {
             binding.photo = photo
+            binding.executePendingBindings()
         }
     }
 

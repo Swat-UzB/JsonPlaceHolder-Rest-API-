@@ -83,7 +83,10 @@
     </fragment>
     <fragment
         android:id="@+id/commentsFragment"
-        android:name="com.example.jsonplaceholderrestapi.fragments.CommentsFragment"
+        android:name="com.example.jsonplaceholderrestapi.fragments.comment.CommentsFragment"
         android:label="fragment_comments"
-        tools:layout="@layout/fragment_comments" />
+        tools:layout="@layout/fragment_comments" >
+        <argument android:name="postId"
+            app:argType="integer"/>
+    </fragment>
 </navigation>
